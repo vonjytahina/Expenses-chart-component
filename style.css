@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+  --primary-soft-red: hsl(10, 79%, 65%);
+  --primary-cyan: hsl(186, 34%, 60%);
+
+  --neutral-dark-brown: hsl(25, 47%, 15%);
+  --neutral-medium-brown: hsl(28, 10%, 53%);
+  --neutral-cream: hsl(27, 66%, 92%);
+  --neutral-very-pale-orange: hsl(33, 100%, 98%);
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  width: 1440px;
+  height: 900px;
+  margin: 0px auto;
+  background: var(--neutral-cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attribution {
+  margin: 20px auto 5px;
+}
+
+.app {
+  width: 500px;
+  height: 700px;
+}
+
+.app header {
+  width: 100%;
+  padding: 20px 40px 20px 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: var(--primary-soft-red);
+  color: var(--neutral-very-pale-orange);
+  margin-bottom: 20px;
+}
+
+.app header .title .balance {
+  color: var(--neutral-cream);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.app header .title .total {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.app .body {
+  background: var(--neutral-very-pale-orange);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+/* header */
+.app .body .top {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--neutral-dark-brown);
+}
+
+/* graph */
+.app .body .middle {
+  width: 100%;
+  height: 175px;
+  margin-top: 20px;
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.app .body .middle div {
+  width: 11%;
+  background: var(--primary-soft-red);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  position: relative;
+}
+
+.app .body .middle div:after {
+  text-align: center;
+  color: var(--neutral-medium-brown);
+  width: 50px;
+  height: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  bottom: -55px;
+  left: 0%;
+}
+
+.app .body .middle div:before {
+  text-align: center;
+  color: var(--neutral-very-pale-orange);
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;  
+  top: -25px;
+  left: 50%;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  padding: 10px 10px;
+  background: var(--neutral-dark-brown);
+  display: none;
+}
+
+.app .body .middle div:hover:before {
+  display: block;
+}
+
+.app .body .middle div:hover {
+  background: #ff9b87;
+}
+
+.middle div.mon {
+  height: 25%;
+}
+
+.middle div.mon:after {
+  content: "mon";
+}
+
+.middle div.mon:before {
+  content: "$17.45";
+}
+
+.middle div.tue {
+  height: 50%;
+}
+
+.middle div.tue:after {
+  content: "tue";
+}
+
+.middle div.tue:before {
+  content: "$34.91";
+}
+
+.middle div.wen {
+  height: 75%;
+  background: var(--primary-cyan) !important;
+}
+
+.middle div.wen:hover {
+  background: #b4dfe5 !important;
+}
+
+.middle div.wen:after {
+  content: "wen";
+}
+
+.middle div.wen:before {
+  content: "$52.36";
+}
+
+.middle div.thu {
+  height: 45%;
+}
+
+.middle div.thu:after {
+  content: "thu";
+}
+
+.middle div.thu:before {
+  content: "$31.07";
+}
+
+.middle div.fri {
+  height: 35%;
+}
+
+.middle div.fri:after {
+  content: "fri";
+}
+
+.middle div.fri:before {
+  content: "$23.39";
+}
+
+.middle div.sat {
+  height: 60%;
+}
+
+.middle div.sat:after {
+  content: "sat";
+}
+
+.middle div.sat:before {
+  content: "$43.28";
+}
+
+.middle div.sun {
+  height: 40%;
+}
+
+.middle div.sun:after {
+  content: "sun";
+}
+
+.middle div.sun:before {
+  content: "$25.48";
+}
+
+.app .separator {
+  width: 100%;
+  height: 1px;
+  background: var(--neutral-cream);
+  margin: 50px auto 30px;
+}
+
+.app .bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.bottom .left .total-month,
+.bottom .right .percentage-text {
+  color: var(--neutral-medium-brown);
+}
+
+.bottom .left .month-price {
+  font-size: 46px;
+  font-weight: 700;
+  color: var(--neutral-dark-brown);
+}
+
+.bottom .right .percentage {
+  text-align: right;
+  font-weight: 700;
+  color: var(--neutral-dark-brown);
+}
+
+
+/* responsive */
+@media screen and (max-width: 375px) {
+
+  .container {
+    width: 375px;
+    height: 750px;
+    border: none;
+    overflow: hidden;
+  }
+
+  .app {
+    width: 350px;
+    height: 600px;
+  }
+
+  .app header {
+    padding: 20px 20px 20px 20px;
+  }
+
+  .app header .logo svg {
+    transform: scale(.8);
+  }
+
+  .app header .title .total {
+    font-size: 26px;
+  }
+
+  /* header */
+  .app .body .top {
+    font-size: 24px;
+  }
+
+  /* graph */
+
+  .app .body {
+    background: var(--neutral-very-pale-orange);
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .app .body .middle div:after {
+    font-size: 12px;
+    width: 30px;
+    height: 50px;
+  }
+
+  .app .body .middle div:before {
+    font-size: 12px;
+    padding: 5px 5px;
+    top: -20px;
+  }
+
+  /* bottom */
+  .bottom .left .total-month,
+  .bottom .right .percentage-text {
+    font-size: 14px;
+  }
+
+  .bottom .left .month-price {
+    font-size: 36px;
+  }
+
+  .bottom .right .percentage {
+    font-size: 14px;
+  }
+
+  .attribution {
+    margin: 20px 0px 5px 0px;
+    font-size: 12px;
+  }
+
+  .attribution a {
+    font-size: 12px;
+  }
+}
